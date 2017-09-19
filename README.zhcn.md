@@ -1,20 +1,20 @@
-[中文文档](/FeiniuBus/SqlExecutor-Go/blob/master/README.zhcn.md)
+[For English](/FeiniuBus/SqlExecutor-Go/blob/master/README.md)
 # SqlExecutor-Go
-Dynamic Query Client coden by golang. You could build a Dynamic Query Parameter very simply with it.
+这是一个动态查询客户端的Golang实现。你可以利用此组件构建动态查询参数。
 
-## Pipeline 
+## 持续集成 
 ![](https://travis-ci.org/FeiniuBus/SqlExecutor-Go.svg?branch=master)
 
-## Dynamic Query Sample
-* You can find this code file in `./samples`
+## 示例
+* 在可以在 `./samples` 中找到示例代码
 
-***IMPORT PACKAGE BEFORE USE***
+***使用前需要导入程序包***
 ```go
 import (
 	DynamicQuery "github.com/FeiniuBus/SqlExecutor-Go/dynamicquery"
 )
 ```
-***Then let's rock***
+***然后就可以使用了***
 ```go
 builder := DynamicQuery.NewBuilder(true)
 child1, err := builder.ParamGroupBuilder.CreateChildAndGroup()
@@ -42,5 +42,5 @@ builder.OrderBy("Amout", DynamicQuery.Ascending).Select("Guest").Take(10).Skip(1
 dynamicQuery := builder.Build()
 ```
 
-## Package install
+## 安装方式
 `go get -u github.com/FeiniuBus/SqlExecutor-Go/dynamicquery`
