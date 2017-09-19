@@ -1,4 +1,4 @@
-[中文文档](/FeiniuBus/SqlExecutor-Go/blob/master/README.zhcn.md)
+[中文文档](/README.zhcn.md)
 # SqlExecutor-Go
 Dynamic Query Client coden by golang. You could build a Dynamic Query Parameter very simply with it.
 
