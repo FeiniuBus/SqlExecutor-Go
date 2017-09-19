@@ -13,10 +13,10 @@ matrix:
     allow_failures:
         - go: tip
     fast_finish: true
-before_install:
-    - go get github.com/mattn/goveralls
-    - go get golang.org/x/tools/cmd/cover
+
 script:
-    - $HOME/gopath/bin/goveralls -service=travis-ci
+    - cd $HOME/gopath/src/github.com/FeiniuBus/SqlExecutor-Go
+    - go build ./dynamicquery
+    - go test ./dynamicquery
 notifications:
     email: false
