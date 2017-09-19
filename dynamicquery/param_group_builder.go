@@ -2,20 +2,24 @@ package dynamicquery
 
 // ParamGroupBuilder ...
 type ParamGroupBuilder struct {
-	paramGroup *ParamGroup
+	paramGroup   *ParamGroup
+	ParamBuilder *ParamBuilder
 }
 
 // NewParamGroupBuilder ...
 func NewParamGroupBuilder() *ParamGroupBuilder {
+	paramGroup := NewParamGroup(And)
 	return &ParamGroupBuilder{
-		paramGroup: NewParamGroup(And),
+		paramGroup:   paramGroup,
+		ParamBuilder: NewParamBuilderWithParamGroup(paramGroup),
 	}
 }
 
 // NewParamGroupBuilderWithParamGroup ...
 func NewParamGroupBuilderWithParamGroup(paramGroup *ParamGroup) *ParamGroupBuilder {
 	return &ParamGroupBuilder{
-		paramGroup: paramGroup,
+		paramGroup:   paramGroup,
+		ParamBuilder: NewParamBuilderWithParamGroup(paramGroup),
 	}
 }
 
@@ -41,8 +45,8 @@ func (builder *ParamGroupBuilder) CreateChildGroup(relation QueryRelation) (*Par
 	if err != nil {
 		return nil, err
 	}
-	childGroup := NewParamGroup(And)
-	builder.paramGroup.ChildGroups = append(builder.paramGroup.ChildGroups, *childGroup)
+	childGroup := NewParamGroup(relation)
+	builder.paramGroup.ChildGroups = append(builder.paramGroup.ChildGroups, childGroup)
 	return NewParamGroupBuilderWithParamGroup(childGroup), nil
 }
 

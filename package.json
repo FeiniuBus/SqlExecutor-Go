@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo Starting build ... && go build ./dynamicquery && echo Build succeeded.",
+    "test":"go test ./dynamicquery"
   },
   "author": "",
   "license": "MIT"

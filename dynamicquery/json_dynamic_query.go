@@ -18,6 +18,7 @@ func NewJSONDynamicQuery(dynamicQuery *DynamicQuery) *JSONDynamicQuery {
 		Take:       dynamicQuery.Take,
 		Pager:      dynamicQuery.Pager,
 		Select:     dynamicQuery.Select,
+		Order:      make([]*JSONOrder, 0),
 	}
 	for _, item := range dynamicQuery.Order {
 		returnValue.Order = append(returnValue.Order, NewJSONOrder(item))

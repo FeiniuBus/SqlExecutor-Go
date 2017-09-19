@@ -3,16 +3,16 @@ package dynamicquery
 // ParamGroup ...
 type ParamGroup struct {
 	Relation    QueryRelation
-	ChildGroups []ParamGroup
-	Params      []Param
+	ChildGroups []*ParamGroup
+	Params      []*Param
 }
 
 // NewParamGroup ...
 func NewParamGroup(relation QueryRelation) *ParamGroup {
 	return &ParamGroup{
 		Relation:    relation,
-		ChildGroups: make([]ParamGroup, 0),
-		Params:      make([]Param, 0),
+		ChildGroups: make([]*ParamGroup, 0),
+		Params:      make([]*Param, 0),
 	}
 }
 

@@ -7,19 +7,31 @@ import (
 
 // ParamBuilder ...
 type ParamBuilder struct {
-	params []Param
+	params []*Param
+	group  *ParamGroup
 }
 
 // NewParamBuilder ...
 func NewParamBuilder() *ParamBuilder {
 	return &ParamBuilder{
-		params: make([]Param, 0),
+		params: make([]*Param, 0),
+	}
+}
+
+// NewParamBuilderWithParamGroup ...
+func NewParamBuilderWithParamGroup(group *ParamGroup) *ParamBuilder {
+	return &ParamBuilder{
+		group: group,
 	}
 }
 
 // Add ...
 func (builder *ParamBuilder) Add(param *Param) *ParamBuilder {
-	builder.params = append(builder.params, *param)
+	if builder.group != nil {
+		builder.group.Params = append(builder.group.Params, param)
+	} else {
+		builder.params = append(builder.params, param)
+	}
 	return builder
 }
 
@@ -82,7 +94,7 @@ func (builder *ParamBuilder) Any(field string, predicate func(*ParamGroupBuilder
 	group := NewParamGroup(And)
 	bu := NewParamGroupBuilderWithParamGroup(group)
 	predicate(bu)
-	value, err := json.Marshal(group)
+	value, _ := json.Marshal(group)
 	return builder.Add(builder.CreateParam(Any, field, string(value)))
 }
 
