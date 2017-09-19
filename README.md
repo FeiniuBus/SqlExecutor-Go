@@ -2,7 +2,7 @@
 Dynamic Query Client coden by golang. You could build a Dynamic Query Parameter very simply with it.
 
 ## Pipeline 
-[](https://travis-ci.org/FeiniuBus/SqlExecutor-Go.svg?branch=master)
+![](https://travis-ci.org/FeiniuBus/SqlExecutor-Go.svg?branch=master)
 
 ## Dynamic Query Sample
 * You can find this code file in `./samples`
