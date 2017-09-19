@@ -1,4 +1,4 @@
-[For English](/FeiniuBus/SqlExecutor-Go/blob/master/README.md)
+[For English](/README.md)
 # SqlExecutor-Go
 这是一个动态查询客户端的Golang实现。你可以利用此组件构建动态查询参数。
 
