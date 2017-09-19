@@ -3,7 +3,7 @@
 这是一个动态查询客户端的Golang实现。你可以利用此组件构建动态查询参数。
 
 ## 持续集成 
-![](https://travis-ci.org/FeiniuBus/SqlExecutor-Go.svg?branch=master)
+[![](https://travis-ci.org/FeiniuBus/SqlExecutor-Go.svg?branch=master)](https://travis-ci.org/FeiniuBus/SqlExecutor-Go)
 
 ## 示例
 * 在可以在 `./samples` 中找到示例代码
