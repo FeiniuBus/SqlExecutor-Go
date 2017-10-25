@@ -3,7 +3,7 @@ package dynamicquery
 // JSONParamGroup ...
 type JSONParamGroup struct {
 	Relation    string            `json:"Relation"`
-	ChildGroups []*JSONParamGroup `json:"ChildGroup"`
+	ChildGroups []*JSONParamGroup `json:"ChildGroups"`
 	Params      []*JSONParam      `json:"Params"`
 }
 
