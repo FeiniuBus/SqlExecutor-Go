@@ -60,6 +60,16 @@ func (builder *ParamGroupBuilder) CreateChildOrGroup() (*ParamGroupBuilder, erro
 	return builder.CreateChildGroup(Or)
 }
 
+// CreateChildAndNotGroup ...
+func (builder *ParamGroupBuilder) CreateChildAndNotGroup() (*ParamGroupBuilder, error) {
+	return builder.CreateChildGroup(AndNot)
+}
+
+// CreateChildOrNotGroup ...
+func (builder *ParamGroupBuilder) CreateChildOrNotGroup() (*ParamGroupBuilder, error) {
+	return builder.CreateChildGroup(OrNot)
+}
+
 // Build ...
 func (builder *ParamGroupBuilder) Build() *ParamGroup {
 	return builder.paramGroup
