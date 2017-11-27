@@ -6,7 +6,11 @@ type QueryRelation int
 const (
 	_ QueryRelation = iota
 	//And Relation
-	And = 0
+	And
 	//Or Relation
-	Or = 1
+	Or
+	//AndNot Relation
+	AndNot
+	//OrNot relation
+	OrNot
 )

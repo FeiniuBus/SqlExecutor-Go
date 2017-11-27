@@ -56,6 +56,10 @@ func (parser *JSONParser) ParseQueryRelation(val QueryRelation) string {
 		return "And"
 	case Or:
 		return "Or"
+	case AndNot:
+		return "AndNot"
+	case OrNot:
+		return "OrNot"
 	}
 	return "And"
 }
